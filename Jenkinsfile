@@ -1,18 +1,8 @@
 pipeline {
-  agent {
-    docker {
-      image '3.5.4-jdk-10:latest'
-    }
-
-  }
+  agent any
   stages {
     stage('Build') {
-      agent {
-        docker {
-          image '3.5.4-jdk-10'
-        }
-
-      }
+      agent any
       steps {
         sh 'mvn -f spring-boot-samples/spring-boot-sample-atmosphere/pom.xml'
       }
