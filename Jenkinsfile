@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image '3.5.4-jdk-10:latest'
+    }
+
+  }
   stages {
     stage('Build') {
       agent {
